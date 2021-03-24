@@ -1,7 +1,7 @@
 package com.example.videogamescanner
 
 data class Game(val name: String,
-                val cover: String,
+                val coverUrl: String,
                 val gtin: String,
                 val release: String,
                 val type: String,
