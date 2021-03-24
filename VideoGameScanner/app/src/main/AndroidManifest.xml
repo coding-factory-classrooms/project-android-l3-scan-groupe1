@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.VideoGameScanner">
-        <activity android:name=".ScanListActivity"></activity>
+        <activity android:name=".scanlist.ScanListActivity"></activity>
     </application>
 
 </manifest>
