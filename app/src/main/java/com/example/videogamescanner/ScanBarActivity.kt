@@ -1,13 +1,17 @@
 package com.example.videogamescanner
 
+import android.content.Intent
 import android.content.pm.PackageManager
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
 import me.dm7.barcodescanner.zbar.Result
 import me.dm7.barcodescanner.zbar.ZBarScannerView
 
+
+private const val TAG = "ScanBarActivity"
 
 class ScanBarActivity : AppCompatActivity(), ZBarScannerView.ResultHandler {
     private lateinit var mScannerView: ZBarScannerView
@@ -25,6 +29,8 @@ class ScanBarActivity : AppCompatActivity(), ZBarScannerView.ResultHandler {
     override fun onResume() {
         super.onResume()
         mScannerView.startCamera()
+        mScannerView.setResultHandler(this)
+        Log.i(TAG, "onResume: ")
     }
 
     override fun onPause() {
@@ -35,5 +41,6 @@ class ScanBarActivity : AppCompatActivity(), ZBarScannerView.ResultHandler {
     override fun handleResult(result: Result?) {
         Toast.makeText(this, result?.contents, Toast.LENGTH_SHORT).show()
         mScannerView.resumeCameraPreview(this)
+
     }
 }

@@ -31,7 +31,7 @@ class ApiActivity : AppCompatActivity() {
 
     val service = retrofit.create(GameService::class.java)
 
-    val gameRequest = service.listGames(apiKey, type, amazon_domain, gtin)
+
 
 
 
@@ -39,16 +39,22 @@ class ApiActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_api)
 
-        gameRequest.enqueue(object : Callback<ResponseBody> {
-            override fun onResponse(call: Call<ResponseBody>, response: Response<ResponseBody>) {
+        Log.i(TAG, "onCreate: ")
+        val gameRequest = service.listGame(apiKey, type, amazon_domain, gtin)
+        gameRequest.enqueue(object : Callback<ApiGame> {
+            override fun onResponse(call: Call<ApiGame>, response: Response<ApiGame>) {
+                Log.i(TAG, "onResponse: ")
                 val game = response.body()
                 if (game != null) {
-                    val stringResponse = response.body()?.string()
-                    Log.i(TAG, "game :  ${stringResponse}")
+                    val ApiGameResponse = response.body()!!
+                    val game = mapApiGame(ApiGameResponse)
+                    Log.i(TAG, "Apigame :  ${ApiGameResponse}")
+                    Log.i(TAG, "game: $game")
                 }
             }
 
-            override fun onFailure(call: Call<ResponseBody>, t: Throwable) {
+            override fun onFailure(call: Call<ApiGame>, t: Throwable) {
+                Log.i(TAG, "onFailure: $t")
                 error("KO")
             }
 
