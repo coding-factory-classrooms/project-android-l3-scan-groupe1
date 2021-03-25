@@ -8,6 +8,7 @@ import androidx.core.app.ActivityCompat
 import me.dm7.barcodescanner.zbar.Result
 import me.dm7.barcodescanner.zbar.ZBarScannerView
 
+
 class ScanBarActivity : AppCompatActivity(), ZBarScannerView.ResultHandler {
     private lateinit var mScannerView: ZBarScannerView
 
