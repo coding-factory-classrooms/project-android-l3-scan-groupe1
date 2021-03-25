@@ -18,17 +18,19 @@
         </activity>
 
         <activity android:name=".api.ApiActivity">
+
+        </activity>
+        <activity android:name=".ScanBarActivity">
+
+        </activity>
+
+        <activity android:name=".scanlist.ScanListActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ScanBarActivity">
-
-        </activity>
-
-        <activity android:name=".scanlist.ScanListActivity"></activity>
     </application>
 
 </manifest>
