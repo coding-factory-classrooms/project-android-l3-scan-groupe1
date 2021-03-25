@@ -21,8 +21,8 @@ class GameDetailActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.detailTitleTextView.text = intent.getStringExtra("title")
-        binding.detailTypeTextView.text = intent.getStringExtra("type")
-        binding.detailPlatformTextView.text = intent.getStringExtra("plateform")
+        binding.detailTypeTextView.text = intent.getStringExtra("rate")
+        binding.detailPlatformTextView.text = intent.getStringExtra("publisher")
         binding.detailReleaseDateTextView.text = intent.getStringExtra("release")
 
         model.getDetail().observe(this, Observer {detail -> onItemLoad(detail!!)})
@@ -31,10 +31,9 @@ class GameDetailActivity : AppCompatActivity() {
 
     private fun onItemLoad(detail: Detail) {
         val itemTitle =intent.getStringExtra("title")
-        val itemType =intent.getStringExtra("type")
-        val itemPlateform =intent.getStringExtra("plateform")
+        val itemRate =intent.getStringExtra("rate")
+        val itemPublisher =intent.getStringExtra("publisher")
         val itemRelease =intent.getStringExtra("release")
-            Log.i("GameDetailActivity", "$itemTitle,$itemType,$itemPlateform,$itemRelease" )
     }
 
 

@@ -2,11 +2,10 @@ package com.example.videogamescanner
 
 data class Game(val name: String,
                 val coverUrl: String,
-                val gtin: String,
                 val release: String,
-                val type: String,
-                val plateform: String)
+                val rate: String,
+                val publisher: String)
 
 fun createGame(): Game {
-    return Game(name="Spider-Man Miles Morales", "", "", "12/11/2020", "Jeu d'action-aventure","PS5 / PS4")
+    return Game(name="Spider-Man Miles Morales", "", "12/11/2020", "","")
 }

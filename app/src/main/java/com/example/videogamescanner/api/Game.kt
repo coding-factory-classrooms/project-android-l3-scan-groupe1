@@ -12,22 +12,24 @@ import retrofit2.http.Query
 @JsonClass(generateAdapter = true)
 data class ApiGame(val product : ApiProduct)
 @JsonClass(generateAdapter = true)
-data class ApiProduct(val title: String, val variants: List<ApiVariant>)
+data class ApiProduct(val title: String, val variants: List<ApiVariant>, val specifications : List<ApiSpecification>, val rating : String, val brand : String)
 @JsonClass(generateAdapter = true)
-data class ApiVariant(val dimensions: List<ApiDimension>)
+data class ApiVariant(val dimensions: List<ApiDimension>, val main_image: String)
+@JsonClass(generateAdapter = true)
+data class ApiSpecification(val value: String)
 @JsonClass(generateAdapter = true)
 data class ApiDimension(val value: String)
+
 
 
 
 fun mapApiGame(apiGame: ApiGame): Game{
     return Game(
         name = apiGame.product.title,
-        coverUrl = "",
-        gtin = "",
-        release = "",
-        type = "",
-        plateform = "",
+        coverUrl = apiGame.product.variants[0].main_image,
+        release = apiGame.product.specifications[3].value,
+        rate = apiGame.product.rating,
+        publisher =apiGame.product.brand
     )
 
 }

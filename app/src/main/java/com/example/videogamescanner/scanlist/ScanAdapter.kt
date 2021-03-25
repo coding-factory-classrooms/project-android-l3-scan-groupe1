@@ -23,8 +23,8 @@ class ScanAdapter(private var games: List<Game>)
         binding.itemWrapper.setOnClickListener {
             val intent = Intent(parent.context, GameDetailActivity::class.java)
             intent.putExtra("title", binding.titleTextView.text )
-            intent.putExtra("type", binding.typeTextView.text )
-            intent.putExtra("plateform", binding.plateformTextView.text )
+            intent.putExtra("rate", binding.rateTextView.text )
+            intent.putExtra("plateform", binding.publisherTextView.text )
             intent.putExtra("release", binding.releaseDateTextView.text )
             startActivity(parent.context, intent,null)
         }
@@ -36,8 +36,8 @@ class ScanAdapter(private var games: List<Game>)
         val games = games[position]
         with (holder.binding) {
             titleTextView.text = games.name
-            typeTextView.text = games.type
-            plateformTextView.text = games.plateform
+            rateTextView.text = games.rate
+            publisherTextView.text = games.publisher
             releaseDateTextView.text = games.release
         }
 
