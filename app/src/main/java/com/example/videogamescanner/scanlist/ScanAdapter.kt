@@ -22,6 +22,10 @@ class ScanAdapter(private var games: List<Game>)
         val binding = ItemScanBinding.inflate(inflater,parent,false)
         binding.itemWrapper.setOnClickListener {
             val intent = Intent(parent.context, GameDetailActivity::class.java)
+            intent.putExtra("title", binding.titleTextView.text )
+            intent.putExtra("type", binding.typeTextView.text )
+            intent.putExtra("plateform", binding.plateformTextView.text )
+            intent.putExtra("release", binding.releaseDateTextView.text )
             startActivity(parent.context, intent,null)
         }
         return ViewHolder(binding)
