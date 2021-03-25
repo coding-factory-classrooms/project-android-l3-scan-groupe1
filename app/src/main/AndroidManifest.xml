@@ -3,6 +3,7 @@
     package="com.example.videogamescanner">
 
     <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -15,8 +16,9 @@
         <activity android:name=".gamedetail.GameDetailActivity">
 
         </activity>
-        <activity android:name=".scanlist.ScanListActivity">
 
+        <activity android:name=".api.ApiActivity">
+        </activity>
         <activity android:name=".ScanBarActivity">
 
             <intent-filter>
@@ -26,6 +28,7 @@
             </intent-filter>
         </activity>
 
+        <activity android:name=".scanlist.ScanListActivity"></activity>
     </application>
 
 </manifest>
