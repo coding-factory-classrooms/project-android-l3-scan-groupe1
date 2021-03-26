@@ -10,9 +10,8 @@
         android:id="@+id/detailCoverImageView"
         android:layout_width="165dp"
         android:layout_height="289dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginLeft="28dp"
         android:layout_marginTop="28dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/spiderman" />
@@ -21,30 +20,29 @@
         android:id="@+id/detailTitleTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:text="Titre"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/detailPlatformTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/detailCoverImageView"
-        app:layout_constraintTop_toTopOf="@+id/detailCoverImageView" />
+        app:layout_constraintBottom_toTopOf="@+id/detailPublisherTextView"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailCoverImageView" />
 
     <TextView
-        android:id="@+id/detailTypeTextView"
+        android:id="@+id/detailRateTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Type"
+        android:text="Rate"
         app:layout_constraintBottom_toTopOf="@+id/detailReleaseDateTextView"
-        app:layout_constraintEnd_toEndOf="@+id/detailPlatformTextView"
-        app:layout_constraintStart_toStartOf="@+id/detailPlatformTextView"
-        app:layout_constraintTop_toBottomOf="@+id/detailPlatformTextView" />
+        app:layout_constraintStart_toStartOf="@+id/detailPublisherTextView"
+        app:layout_constraintTop_toBottomOf="@+id/detailPublisherTextView" />
 
     <TextView
-        android:id="@+id/detailPlatformTextView"
+        android:id="@+id/detailPublisherTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Platform"
-        app:layout_constraintBottom_toTopOf="@+id/detailTypeTextView"
-        app:layout_constraintEnd_toEndOf="@+id/detailTitleTextView"
+        android:text="Publisher"
+        app:layout_constraintBottom_toTopOf="@+id/detailRateTextView"
         app:layout_constraintStart_toStartOf="@+id/detailTitleTextView"
         app:layout_constraintTop_toBottomOf="@+id/detailTitleTextView" />
 
@@ -53,18 +51,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Release Date"
-        app:layout_constraintBottom_toBottomOf="@+id/detailCoverImageView"
-        app:layout_constraintEnd_toEndOf="@+id/detailTypeTextView"
-        app:layout_constraintStart_toStartOf="@+id/detailTypeTextView"
-        app:layout_constraintTop_toBottomOf="@+id/detailTypeTextView" />
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/detailRateTextView"
+        app:layout_constraintTop_toBottomOf="@+id/detailRateTextView" />
 
-    <TextView
-        android:id="@+id/detailDescriptionTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="Description"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailCoverImageView" />
 </androidx.constraintlayout.widget.ConstraintLayout>
